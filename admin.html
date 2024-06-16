@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file here -->
+    <style>
+        /* Additional CSS for layout and styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/free-photo/elevated-view-beige-orange-cardboard-papers-corner-grey-background_23-2147878482.jpg?t=st=1718392754~exp=1718396354~hmac=210484a1f9fa74bf0a5971145fec0ff9c193e4c99fd7170e3298afdfefae42de&w=1060'); /* Background image URL */
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        /* Responsive design adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            input[type="text"], select, button[type="submit"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin</h1>
+        <form action="/insert" id="addStockForm" method="post">
+            <div class="form-group">
+                <label for="type">Add Employee Type:</label>
+                <select name="type" id="type" required>
+                    <option value="" selected disabled>Select Employee Type</option>
+                    <option value="Plumber">Plumber</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="Mechanic">Mechanic</option>
+                    <option value="Carpenter">Carpenter</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="employee">No of Employees:</label>
+                <input type="text" id="employee" name="employee" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Cost of 1 employee:</label>
+                <input type="text" id="price" name="price" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <form action="/view" method="get">
+            <button type="submit">View employees</button>
+        </form>
+    </div>
+</body>
+</html>
